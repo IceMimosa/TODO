@@ -122,14 +122,14 @@ private fun IntArray.findTwoSumIndexesWithMapOneStep(target: Int): IntArray {
 
     // 2. 遍历数组
     for (i in 0 until this.count()) {
-        // 先放入map中
-        maps[this[i]] = i
-
         val second = target - this[i]
         // maps 中存在 second, 并且 second 的下标和当前不一样
-        if (maps.containsKey(second) && i != maps[second]) {
+        if (maps.containsKey(second)) {
             return intArrayOf(maps[second]!!, i) // 注意返回顺序
         }
+
+        // 放入map中
+        maps[this[i]] = i
     }
     throw IllegalArgumentException("No two sum solution")
 }
