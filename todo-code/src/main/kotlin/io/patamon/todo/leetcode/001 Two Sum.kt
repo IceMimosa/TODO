@@ -96,12 +96,11 @@ private fun IntArray.findTwoSumIndexes(target: Int): IntArray {
  */
 private fun IntArray.findTwoSumIndexesWithMapTwoStep(target: Int): IntArray {
     // 1. 定义一个map, 存num -> index
-    val maps = mutableMapOf<Int, Int>()
-    this.forEachIndexed { i, num -> maps[num] = i }
+    val maps = this.mapIndexed { i, num -> num to i }.toMap()
 
     // 2. 遍历数组
-    for (i in 0 until this.count()) {
-        val second = target - this[i]
+    this.forEachIndexed { i, num ->
+        val second = target - num
         // maps 中存在 second, 并且 second 的下标和当前不一样
         if (maps.containsKey(second) && i != maps[second]) {
             return intArrayOf(i, maps[second]!!)
@@ -121,15 +120,15 @@ private fun IntArray.findTwoSumIndexesWithMapOneStep(target: Int): IntArray {
     val maps = mutableMapOf<Int, Int>()
 
     // 2. 遍历数组
-    for (i in 0 until this.count()) {
-        val second = target - this[i]
+    this.forEachIndexed { i, num ->
+        val second = target - num
         // maps 中存在 second, 并且 second 的下标和当前不一样
         if (maps.containsKey(second)) {
             return intArrayOf(maps[second]!!, i) // 注意返回顺序
         }
 
         // 放入map中
-        maps[this[i]] = i
+        maps[num] = i
     }
     throw IllegalArgumentException("No two sum solution")
 }
