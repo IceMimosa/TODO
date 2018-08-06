@@ -79,7 +79,7 @@ class ReverseInteger : StringSpec({
 /**
  * 弹出/推入数字 + 溢出检查
  *
- * 时间复杂度: O(log(x)), x大约有lg(x)个数字
+ * 时间复杂度: O(log(n)), x大约有lg(x)个数字
  * 空间复杂度: O(1)
  */
 private fun Int.popPush(): Int {
