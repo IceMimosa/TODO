@@ -44,14 +44,14 @@ import io.kotlintest.specs.StringSpec
  * Created by IceMimosa
  * Date: 2018/08/08
  */
-class LongestCommonPrefix: StringSpec({
+class LongestCommonPrefix : StringSpec({
 
     /**
      * Horizontal scanning: [horizontalScanning]
      */
     "Horizontal scanning" {
-        arrayOf("flower","flow","flight").horizontalScanning() shouldBe "fl"
-        arrayOf("dog","racecar","car").horizontalScanning() shouldBe ""
+        arrayOf("flower", "flow", "flight").horizontalScanning() shouldBe "fl"
+        arrayOf("dog", "racecar", "car").horizontalScanning() shouldBe ""
     }
 
 })
