@@ -135,6 +135,11 @@
             <name>Kotlin Repository</name>
             <url>https://dl.bintray.com/kotlin/kotlin-dev/</url>
         </repository>
+        <repository>
+            <id>patamon.release.repository</id>
+            <name>github release repository</name>
+            <url>https://raw.github.com/icemimosa/maven/release/</url>
+        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
