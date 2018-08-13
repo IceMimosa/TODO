@@ -70,11 +70,13 @@ class RemoveElement : StringSpec({
     "双指针法" {
         intArrayOf(3, 2, 2, 3).removeElement(3) shouldBe 2
         intArrayOf(0, 1, 2, 2, 3, 0, 4, 2).removeElement(2) shouldBe 5
+        intArrayOf(0, 1, 2, 2, 3, 0, 4, 2).removeElement(3) shouldBe 7
         intArrayOf(0, 0, 0).removeElement(0) shouldBe 0
         intArrayOf(0, 1, 2).removeElement(3) shouldBe 3
 
         intArrayOf(3, 2, 2, 3).removeElement2(3) shouldBe 2
         intArrayOf(0, 1, 2, 2, 3, 0, 4, 2).removeElement2(2) shouldBe 5
+        intArrayOf(0, 1, 2, 2, 3, 0, 4, 2).removeElement2(3) shouldBe 7
         intArrayOf(0, 0, 0).removeElement2(0) shouldBe 0
         intArrayOf(0, 1, 2).removeElement2(3) shouldBe 3
     }
@@ -126,13 +128,17 @@ private fun IntArray.removeElement2(element: Int): Int {
     var pos = 0
     var last = this.size - 1
     while (pos <= last) {
+        // 如果与 element 相等, 用 last 元素覆盖
         if (this[pos] == element) {
             this[pos] = this[last]
+            // last 向前走
             last--
-        } else {
+        }
+        // 否则 pos 继续向前走
+        else {
             pos++
         }
     }
-    return last + 1
+    return pos
 }
 
