@@ -58,16 +58,13 @@ class ImplementStrStr : StringSpec({
     /**
      * [strStr]
      */
-    "双指针法" {
+    "两遍循环" {
         "hello".strStr("ll") shouldBe 2
         "hella".strStr("la") shouldBe 3
         "aaaaa".strStr("bba") shouldBe -1
         "aaaaa".strStr("") shouldBe 0
-
-        "hello".strStr2("ll") shouldBe 2
-        "hella".strStr2("la") shouldBe 3
-        "aaaaa".strStr2("bba") shouldBe -1
-        "aaaaa".strStr2("") shouldBe 0
+        "mississippi".strStr("issipi") shouldBe -1
+        "aaa".strStr("aaa") shouldBe 0
     }
 })
 
@@ -78,39 +75,6 @@ class ImplementStrStr : StringSpec({
  * 空间复杂度: O(1)
  */
 private fun String.strStr(needle: String): Int {
-    if (this.length < needle.length) return -1
-    if (needle.isEmpty()) return 0
-
-    var i = 0
-    var j = 0
-    while (i < this.length) {
-        exit@
-        while (j < needle.length) {
-            // 如果不相等, i退到下一个元素, j初始化到0. 并且结束 needle 的循环
-            if (this[i] != needle[j]) {
-                i = i - j + 1
-                j = 0
-                break@exit
-            }
-            // 否则 i 和 j 继续前进
-            else {
-                i++
-                j++
-            }
-        }
-        // 如果发现 j 到头了, 退出, 说明找到了
-        if (j == needle.length) {
-            break
-        }
-    }
-    // j 如果到头了, 表示找到了
-    return if (j == needle.length) i - needle.length else -1
-}
-
-/**
- * 思路相同, 代码简化一下
- */
-private fun String.strStr2(needle: String): Int {
     if (this.length < needle.length) return -1
     if (needle.isEmpty()) return 0
 
