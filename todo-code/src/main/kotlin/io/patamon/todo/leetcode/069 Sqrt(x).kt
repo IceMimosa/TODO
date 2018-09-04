@@ -55,18 +55,56 @@ class SqrtX : StringSpec({
         25.sqrtX() shouldBe 5
         30.sqrtX() shouldBe 5
     }
+
+
+    /**
+     * [sqrtX2]
+     */
+    "sqrtX2" {
+        4.sqrtX2() shouldBe 2
+        8.sqrtX2() shouldBe 2
+        25.sqrtX2() shouldBe 5
+        30.sqrtX2() shouldBe 5
+    }
 })
 
 /**
  * 求 x 的平方根
  *
- * 折半(二分法)
+ * 折半法
  */
 private fun Int.sqrtX(): Int {
     // 使用 long 类型, 防止 i*i 超出 int 类型
     var i: Long = this.toLong()
-    while (i * i > this) {
+    // while (i * i > this) { // 可以用除法解决
+    while (i > this / i) {
+        // 取 i ~ (this/i) 的中间
         i = (i + this / i) / 2
     }
     return i.toInt()
+}
+
+/**
+ * 二分法
+ */
+private fun Int.sqrtX2(): Int {
+    if (this == 0) return 0
+    var start = 1
+    var end = Int.MAX_VALUE
+    while (start < end) {
+        val mid = start + (end - start) / 2
+        // 找到了结果
+        if (mid <= this / mid && (mid + 1) > this / (mid + 1)) {
+            return mid
+        }
+        // mid*mid > this
+        else if (mid > this / mid) {
+            end = mid
+        }
+        // (mid+1)*(mid+1) <= this
+        else {
+            start = mid + 1
+        }
+    }
+    return start
 }
