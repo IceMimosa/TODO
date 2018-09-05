@@ -15,6 +15,7 @@ class ListNode(var `val`: Int = 0) {
         /**
          * 生成节点方法
          */
+        @JvmStatic
         fun makeNodes(vararg args: Int): ListNode? {
             val out = ListNode(0)
             var curr = out
