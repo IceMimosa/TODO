@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+ ~
+ ~ @author chk@terminus.io
+ ~ @date 2018-10-26 19:15:15
+ ~ Created by CodeGen .
+-->
+
+<mapper namespace="HisenseArticle">
+    <resultMap id="HisenseArticleMap" type="HisenseArticle">
+        <id property="id" column="id"/>
+        <result property="menuId" column="menu_id"/>
+        <result property="orderIndex" column="order_index"/>
+        <result property="url" column="url"/>
+        <result property="name" column="name"/>
+        <result property="status" column="status"/>
+        <result property="articleDesc" column="article_desc"/>
+        <result property="seoKeyword" column="seo_keyword"/>
+        <result property="seoDesc" column="seo_desc"/>
+        <result property="content" column="content"/>
+        <result property="extra" column="extra"/>
+        <result property="createdAt" column="created_at"/>
+        <result property="updatedAt" column="updated_at"/>
+    </resultMap>
+
+    <sql id="table_name">
+        hisense_articles
+    </sql>
+
+    <sql id="columns_all">
+        id,
+        <include refid="columns_exclude_id"/>
+    </sql>
+
+    <sql id="columns_exclude_id">
+        `menu_id`, `order_index`, `url`, `name`, `status`, `article_desc`, `seo_keyword`, `seo_desc`, `content`,
+        `extra`, created_at, updated_at
+    </sql>
+
+    <sql id="values_exclude_id">
+        #{menuId}, #{orderIndex}, #{url}, #{name}, #{status}, #{articleDesc}, #{seoKeyword}, #{seoDesc}, #{content},
+        #{extra}, now(), now()
+    </sql>
+
+    <sql id="criteria">
+        <where>
+            <if test="menuId != null">AND `menu_id` = #{menuId}</if>
+            <if test="orderIndex != null">AND `order_index` = #{orderIndex}</if>
+            <if test="url != null">AND `url` = #{url}</if>
+            <if test="name != null">AND `name` = #{name}</if>
+            <if test="status != null">AND `status` = #{status}</if>
+            <if test="articleDesc != null">AND `article_desc` = #{articleDesc}</if>
+            <if test="seoKeyword != null">AND `seo_keyword` = #{seoKeyword}</if>
+            <if test="seoDesc != null">AND `seo_desc` = #{seoDesc}</if>
+            <if test="content != null">AND `content` = #{content}</if>
+            <if test="extra != null">AND `extra` = #{extra}</if>
+            <if test="createdAt != null">AND <![CDATA[created_at >= #{createdAt}]]> </if>
+            <if test="updatedAt != null">AND <![CDATA[updated_at < #{updatedAt}]]> </if>
+        </where>
+    </sql>
+
+    <insert id="create" parameterType="HisenseArticle" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO
+        <include refid="table_name"/>
+        (<include refid="columns_exclude_id"/>)
+        VALUES
+        (<include refid="values_exclude_id"/>)
+    </insert>
+
+    <insert id="creates" parameterType="HisenseArticle" useGeneratedKeys="true">
+        INSERT INTO
+        <include refid="table_name"/>
+        (<include refid="columns_exclude_id"/>)
+        VALUES
+        <foreach collection="list" item="i" index="index" separator=",">
+            (#{i.menuId}, #{i.orderIndex}, #{i.url}, #{i.name}, #{i.status}, #{i.articleDesc}, #{i.seoKeyword},
+            #{i.seoDesc}, #{i.content}, #{i.extra}, now(), now())
+        </foreach>
+    </insert>
+
+    <select id="findById" parameterType="long" resultMap="HisenseArticleMap">
+        SELECT
+        <include refid="columns_all"/>
+        FROM
+        <include refid="table_name"/>
+        WHERE id = #{id} LIMIT 1
+    </select>
+
+    <select id="findByIds" parameterType="list" resultMap="HisenseArticleMap">
+        SELECT
+        <include refid="columns_all"/>
+        FROM
+        <include refid="table_name"/>
+        WHERE id IN
+        <foreach item="id" collection="list" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+
+    <update id="update" parameterType="HisenseArticle">
+        UPDATE
+        <include refid="table_name"/>
+        <set>
+            <if test="menuId != null">`menu_id` = #{menuId},</if>
+            <if test="orderIndex != null">`order_index` = #{orderIndex},</if>
+            <if test="url != null">`url` = #{url},</if>
+            <if test="name != null">`name` = #{name},</if>
+            <if test="status != null">`status` = #{status},</if>
+            <if test="articleDesc != null">`article_desc` = #{articleDesc},</if>
+            <if test="seoKeyword != null">`seo_keyword` = #{seoKeyword},</if>
+            <if test="seoDesc != null">`seo_desc` = #{seoDesc},</if>
+            <if test="content != null">`content` = #{content},</if>
+            <if test="extra != null">`extra` = #{extra},</if>
+            updated_at = now()
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="long">
+        DELETE FROM
+        <include refid="table_name"/>
+        WHERE id = #{id}
+    </delete>
+
+    <select id="count" parameterType="map" resultType="long">
+        SELECT COUNT(1)
+        FROM
+        <include refid="table_name"/>
+        <include refid="criteria"/>
+    </select>
+
+    <select id="paging" parameterType="map" resultMap="HisenseArticleMap">
+        SELECT
+        <include refid="columns_all"/>
+        FROM
+        <include refid="table_name"/>
+        <include refid="criteria"/>
+        ORDER BY `id` DESC
+        LIMIT #{offset}, #{limit}
+    </select>
+
+    <select id="list" parameterType="map" resultMap="HisenseArticleMap">
+        SELECT
+        <include refid="columns_all"/>
+        FROM
+        <include refid="table_name"/>
+        <include refid="criteria"/>
+        ORDER BY `id` DESC
+    </select>
+
+</mapper>
