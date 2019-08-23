@@ -16,12 +16,12 @@
         <dependency>
             <groupId>io.kotlintest</groupId>
             <artifactId>kotlintest-core</artifactId>
-            <version>3.1.8</version>
+            <version>3.4.0</version>
         </dependency>
         <dependency>
             <groupId>io.kotlintest</groupId>
             <artifactId>kotlintest-runner-junit5</artifactId>
-            <version>3.1.8</version>
+            <version>3.4.0</version>
         </dependency>
     </dependencies>
 

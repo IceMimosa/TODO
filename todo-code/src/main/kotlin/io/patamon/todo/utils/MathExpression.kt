@@ -5,6 +5,8 @@ import java.util.*
 /**
  * Desc: 简单的数学表达式引擎, 没有小数相关的逻辑
  *
+ * @see https://github.com/scireum/parsii
+ *
  * Mail: chk19940609@gmail.com
  * Created by IceMimosa
  * Date: 2019-05-09
@@ -77,11 +79,10 @@ object MathExpression {
 
         var i = 0
         while (i < expr.length) {
-            val it = expr[i]
-            when {
-                it == ' ' -> {
+            when (val it = expr[i]) {
+                ' ' -> {
                 }
-                it in '0'..'9' -> {
+                in '0'..'9' -> {
                     var digital = "$it"
                     while (i + 1 < expr.length && expr[i + 1] in '0'..'9') {
                         digital += expr[i + 1]
@@ -89,7 +90,7 @@ object MathExpression {
                     }
                     stack.push(digital)
                 }
-                it == ')' -> {
+                ')' -> {
                     var o = operator.pop()
                     while (o != "(") {
                         stack.push(o)
