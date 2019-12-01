@@ -1,4 +1,4 @@
-package io.patamon.todo.algorithm4
+package io.patamon.todo.algorithm4.chapter1
 
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
