@@ -55,10 +55,17 @@ class PlusOne : StringSpec({
     "plusOne" {
         intArrayOf(1, 2, 3).plusOne() shouldBe intArrayOf(1, 2, 4)
         intArrayOf(4, 3, 2, 1).plusOne() shouldBe intArrayOf(4, 3, 2, 2)
+        intArrayOf(9, 9, 9, 9).plusOne() shouldBe intArrayOf(1, 0, 0, 0, 0)
     }
 
 })
 
+/**
+ * 考虑几种情况
+ *   1. 最后一个不是9
+ *   2. 不全是9
+ *   3. 全是9
+ */
 private fun IntArray.plusOne(): IntArray {
     val len = this.size
     for (i in len - 1 downTo 0) {

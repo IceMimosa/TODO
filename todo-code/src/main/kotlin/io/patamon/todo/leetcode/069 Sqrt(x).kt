@@ -74,11 +74,13 @@ class SqrtX : StringSpec({
  * 折半法
  */
 private fun Int.sqrtX(): Int {
+    if (this == 0) return 0
     // 使用 long 类型, 防止 i*i 超出 int 类型
     var i: Long = this.toLong()
     // while (i * i > this) { // 可以用除法解决
     while (i > this / i) {
         // 取 i ~ (this/i) 的中间
+        // 这里是可以求证: i <= (i + this / i) / 2
         i = (i + this / i) / 2
     }
     return i.toInt()
