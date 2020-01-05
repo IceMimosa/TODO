@@ -8,7 +8,7 @@ import io.kotlintest.specs.StringSpec
  *
  * ============================================================================================================
  *
- * # 66. Add Binary
+ * # 67. Add Binary
  *
  * Given two binary strings, return their sum (also a binary string).
  *
@@ -31,7 +31,7 @@ import io.kotlintest.specs.StringSpec
  *
  * =============================================================================================================
  *
- * # 66. 二进制求和
+ * # 67. 二进制求和
  *
  * 给定两个二进制字符串，返回他们的和（用二进制表示）。
  *
@@ -45,9 +45,6 @@ import io.kotlintest.specs.StringSpec
  */
 class AddBinary : StringSpec({
 
-    /**
-     * [plusOne]
-     */
     "AddBinary" {
         addBinary("1010", "1011") shouldBe "10101"
         addBinary("11", "1") shouldBe "100"
