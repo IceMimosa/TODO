@@ -38,7 +38,7 @@ private fun TreeNode?.findSecondMinimumValue(): Int {
         return -1
     }
 
-    // 左子树只有相等的时候才需要继续变量
+    // 左子树只有相等的时候才需要继续遍历
     var left = this.left!!.`val`
     if (left == this.`val`) {
         left = this.left.findSecondMinimumValue()
