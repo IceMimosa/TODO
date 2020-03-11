@@ -1,5 +1,6 @@
 package io.patamon.todo.leetcode
 
+import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
 import io.patamon.todo.common.TreeNode
 
@@ -22,7 +23,10 @@ import io.patamon.todo.common.TreeNode
 class DiameterOfBinaryTree : StringSpec({
 
     "Diameter of Binary Tree" {
-
+        TreeNode(1)
+                .left(TreeNode(2, 4, 5))
+                .right(3)
+                .diameterOfBinaryTree() shouldBe 3
     }
 
 })
