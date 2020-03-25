@@ -147,7 +147,7 @@ private fun TreeNode?.inorderTraversalColorMark(nodes: MutableList<Int>): List<I
                 // 入栈顺序
                 // 中序遍历: 右中左
                 // 先序遍历: 右左中
-                // 后序遍历: 中左右
+                // 后序遍历: 中右左
                 stack.push(node.right to WHITE)
                 stack.push(node to GRAY)
                 stack.push(node.left to WHITE)
