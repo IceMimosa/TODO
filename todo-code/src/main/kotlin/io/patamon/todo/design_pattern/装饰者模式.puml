@@ -1,0 +1,29 @@
+@startuml
+
+package "Component" {
+    interface Component {
+        +do()
+    }
+
+    class Component1 extends Component {
+        +do()
+    }
+}
+
+package "Decorator" {
+    abstract class Decorator extends Component {
+        Component component
+        +do()
+    }
+
+
+    class Decorator1 extends Decorator {
+        +other()
+    }
+
+    class Decorator2 extends Decorator {
+        +other()
+    }
+}
+
+@enduml

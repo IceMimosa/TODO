@@ -1,0 +1,46 @@
+@startuml
+
+package "Product" {
+    interface Product {
+
+    }
+
+    class ProductA1 extends Product {
+    }
+
+    class ProductA2 extends Product {
+    }
+
+    class ProductB1 extends Product {
+    }
+
+    class ProductB2 extends Product {
+    }
+}
+
+package "Factory" {
+    interface Factory {
+    }
+    class Factory1 extends Factory {
+        +createProduct(): Product
+    }
+    class Factory2 extends Factory {
+        +createProduct(): Product
+    }
+}
+
+package "Client" {
+    class Client {
+        PÅroduct product
+        SimpleFactory factory
+    }
+}
+
+Client --> Factory
+Client --> Product : use
+Factory1 --> ProductA1 : create
+Factory1 --> ProductA2 : create
+Factory2 --> ProductB1 : create
+Factory2 --> ProductB2 : create
+
+@enduml

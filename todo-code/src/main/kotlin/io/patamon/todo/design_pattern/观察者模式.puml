@@ -1,0 +1,29 @@
+@startuml
+
+package "Subject" {
+    interface Subject {
+        +register(Observer observer)
+        +remove(Observer observer)
+        +notify(Observer observer)
+    }
+
+
+    class ConcreteSubject extends Subject {
+
+    }
+}
+
+package "Observer" {
+    interface Observer {
+        +update()
+    }
+
+    class ConcreteObserver extends Observer {
+
+    }
+}
+
+Subject --> Observer : notify
+ConcreteObserver ..> ConcreteSubject : pull
+
+@enduml
