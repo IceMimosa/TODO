@@ -1,0 +1,32 @@
+@startuml
+
+package "Product" {
+    interface Product {
+
+    }
+
+    class ProductA extends Product {
+    }
+
+    class ProductB extends Product {
+    }
+}
+
+package "Factory" {
+    interface Factory {
+    }
+    abstract AbsFactory extends Factory {
+        +makeInnerProduct(): Product
+        +makeInnerProduct2(): Product
+    }
+    class Factory1 extends AbsFactory {
+    }
+    class Factory2 extends AbsFactory {
+
+    }
+}
+
+Factory1 --> ProductA : create
+Factory2 --> ProductB : create
+
+@enduml

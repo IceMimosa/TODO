@@ -1,0 +1,35 @@
+@startuml
+
+package "Target" {
+    interface Target {
+
+    }
+
+    class Targe1 extends Target {
+    }
+}
+
+package "Adaptee" {
+    interface Adaptee {
+
+    }
+
+    class Adaptee1 extends Adaptee {
+    }
+}
+
+package "Adapter: 类适配器" {
+    class Adapter extends Adaptee, Target {
+    }
+}
+
+package "Adapter2: 对象适配器" {
+    class Adapter2 extends Target {
+        Adaptee adaptee
+    }
+}
+
+Adapter2 --> Adaptee1 : 持有
+
+
+@enduml

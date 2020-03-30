@@ -31,7 +31,7 @@ package "Factory" {
 
 package "Client" {
     class Client {
-        PÅroduct product
+        Product product
         SimpleFactory factory
     }
 }

@@ -1,0 +1,27 @@
+@startuml
+
+package "Target" {
+    abstract Target {
+        Bridger bridger;
+    }
+
+    class Targe1 extends Target {
+
+    }
+}
+
+package "Bridger" {
+    interface Bridger {
+
+    }
+
+    class Bridger1 extends Bridger {
+    }
+    class Bridger2 extends Bridger {
+    }
+}
+
+Target --> Bridger : use
+
+
+@enduml

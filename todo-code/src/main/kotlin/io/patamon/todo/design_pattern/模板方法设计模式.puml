@@ -1,0 +1,23 @@
+@startuml
+
+package "Parent" {
+    abstract Parent {
+        -method()
+        +abstract childDo()
+        +hook()
+    }
+}
+
+package "Children" {
+
+    class Children1 extends Parent {
+        +abstract childDo()
+    }
+
+    class Children2 extends Parent {
+        +abstract childDo()
+        +hook()
+    }
+}
+
+@enduml
