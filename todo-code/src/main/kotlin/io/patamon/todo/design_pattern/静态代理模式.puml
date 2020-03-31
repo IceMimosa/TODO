@@ -1,0 +1,22 @@
+@startuml
+
+package "Target" {
+    interface Target {
+        +method()
+    }
+
+    class Target1 extends Target {
+    }
+}
+
+package "Proxy" {
+
+    class Proxy extends Target {
+        Target target
+        +method()
+    }
+}
+
+Proxy --> Target1 : 持有
+
+@enduml
