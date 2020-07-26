@@ -105,6 +105,8 @@ private fun ListNode?.merge(node: ListNode?): ListNode? {
         l2 = l2.next
         curr = curr.next!!
     }
+    // 最后一步可以直接赋值链表...
+    // curr.next = l1 ?: l2
 
     // 返回output的下一个, 因为第一个不算
     return output.next
