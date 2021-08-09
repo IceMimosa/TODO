@@ -1,9 +1,9 @@
 package io.patamon.todo.leetcode.offer
 
-import io.kotlintest.shouldBe
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
 import java.util.ArrayDeque
 
-import io.kotlintest.specs.StringSpec
 
 /**
  * Desc:

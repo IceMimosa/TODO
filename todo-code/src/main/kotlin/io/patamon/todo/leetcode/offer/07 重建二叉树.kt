@@ -1,6 +1,6 @@
 package io.patamon.todo.leetcode.offer
 
-import io.kotlintest.specs.StringSpec
+import io.kotest.core.spec.style.StringSpec
 
 /**
  * Desc:

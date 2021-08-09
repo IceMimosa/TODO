@@ -1,6 +1,6 @@
 package io.patamon.todo.leetcode
 
-import io.kotlintest.specs.StringSpec
+import io.kotest.core.spec.style.StringSpec
 import io.patamon.todo.common.TreeNode
 
 /**
