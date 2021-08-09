@@ -18,13 +18,13 @@ import java.util.*
  *   1. Open brackets must be closed by the same type of brackets.
  *   2. Open brackets must be closed in the correct order.
  *
- * Note that an empty string is also considered valid.
+ * Note that an empty string is also considered valid.
  *
  * ============================================================================================================
  *
  * # 20. 有效的括号
  *
- * 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
+ * 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
 
  * 有效字符串需满足：
  *
