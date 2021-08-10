@@ -26,6 +26,16 @@ class ListNode(var `val`: Int = 0) {
             return out.next
         }
 
+        @JvmStatic
+        fun makeNodes(vararg args: ListNode): ListNode? {
+            val out = ListNode(0)
+            var curr = out
+            args.forEach {
+                curr.next = it
+                curr = curr.next!!
+            }
+            return out.next
+        }
     }
 
     /**
