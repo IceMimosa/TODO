@@ -16,8 +16,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <kotlin.version>1.5.21</kotlin.version>
-        <kotest.version>4.6.1</kotest.version>
+        <kotlin.version>1.6.10</kotlin.version>
+        <kotest.version>5.1.0</kotest.version>
     </properties>
 
     <dependencies>

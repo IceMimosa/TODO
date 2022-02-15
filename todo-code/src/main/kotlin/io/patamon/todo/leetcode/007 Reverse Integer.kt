@@ -90,7 +90,7 @@ private fun Int.popPush(): Int {
         val pop = input % 10
         input /= 10
         // 溢出判断
-        if (rev > Int.MAX_VALUE / 10 || (rev == Int.MAX_VALUE / 10 && pop == 7)) return 0
+        if (rev > Int.MAX_VALUE / 10 || (rev == Int.MAX_VALUE / 10 && pop > 7)) return 0
         if (rev < Int.MIN_VALUE / 10 || (rev == Int.MIN_VALUE / 10 && pop < -8)) return 0
         rev = rev * 10 + pop
     }

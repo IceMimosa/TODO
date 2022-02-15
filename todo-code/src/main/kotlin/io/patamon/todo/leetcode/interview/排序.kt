@@ -200,7 +200,7 @@ private fun Array<Int>.partition(l: Int, h: Int): Int {
 fun Array<Int>?.sortByMerge(): Array<Int> {
     if (this == null || this.size <= 1) return this ?: emptyArray()
 
-    val middle = Math.floor(this.size / 2.0).toInt()
+    val middle = floor(this.size / 2.0).toInt()
     return merge(
             this.sliceArray(0 until middle).sortByMerge(),
             this.sliceArray(middle until this.size).sortByMerge()
