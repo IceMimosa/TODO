@@ -34,7 +34,7 @@ import io.patamon.todo.common.BaseSpec
  * Created by IceMimosa
  * Date: 2021/8/10
  */
-class `136 Single Number` : BaseSpec({
+class SingleNumber : BaseSpec({
 
     "Single Number" {
         intArrayOf(2, 2, 1).singleNumber() shouldBe 1

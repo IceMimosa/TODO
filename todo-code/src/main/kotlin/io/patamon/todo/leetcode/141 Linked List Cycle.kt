@@ -22,7 +22,7 @@ import io.patamon.todo.common.ListNode
  * Created by IceMimosa
  * Date: 2021/8/10
  */
-class `141 Linked List Cycle` : BaseSpec({
+class LinkedListCycle : BaseSpec({
 
     "Linked List Cycle" {
         // 3 -> 2 -> 0 -> -4
