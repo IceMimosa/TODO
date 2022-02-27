@@ -26,7 +26,7 @@ import io.patamon.todo.common.BaseSpec
  *
  * * 1 <= nums.length <= 2 * 104
  * * -10 <= nums[i] <= 10
- * * nums 的任何前缀或后缀的乘积都 保证 是一个 32-位 整数
+ * * nums 的任何前缀或后缀的乘积都 保证是一个 32-位 整数
  *
  */
 class MaximumProductSubarray : BaseSpec({
