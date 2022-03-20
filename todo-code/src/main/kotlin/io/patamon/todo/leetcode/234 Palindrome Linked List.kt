@@ -51,6 +51,7 @@ private fun ListNode?.isPalindrome(): Boolean {
         pre = slow
         slow = tmp
     }
+    // 奇数
     if (fast != null) {
         slow = slow!!.next
     }
