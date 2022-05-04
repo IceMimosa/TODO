@@ -22,7 +22,7 @@ import io.kotest.matchers.shouldBe
  * 输出：["h","a","n","n","a","H"]
  *
  * 提示：
- * 1 <= s.length <= 105
+ * 1 <= s.length <= 10^5
  * s[i] 都是 ASCII 码表中的可打印字符
  */
 class ReverseString : StringSpec({

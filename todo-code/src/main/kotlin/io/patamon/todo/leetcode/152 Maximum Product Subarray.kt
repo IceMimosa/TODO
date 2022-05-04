@@ -24,7 +24,7 @@ import io.patamon.todo.common.BaseSpec
  *
  * 提示:
  *
- * * 1 <= nums.length <= 2 * 104
+ * * 1 <= nums.length <= 2 * 10^4
  * * -10 <= nums[i] <= 10
  * * nums 的任何前缀或后缀的乘积都 保证是一个 32-位 整数
  *

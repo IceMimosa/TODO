@@ -38,7 +38,7 @@ import io.patamon.todo.common.BaseSpec
  *
  * 提示：
  *
- * * 1 <= s.length <= 104
+ * * 1 <= s.length <= 10^4
  * * s 包含英文大小写字母、数字和空格 ' '
  * * s 中 至少存在一个 单词
  */

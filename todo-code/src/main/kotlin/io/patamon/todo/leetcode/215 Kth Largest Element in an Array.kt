@@ -26,8 +26,8 @@ import java.util.*
  *
  * 提示：
  *
- * * 1 <= k <= nums.length <= 104
- * * -104 <= nums[i] <= 104
+ * * 1 <= k <= nums.length <= 10^4
+ * * -10^4 <= nums[i] <= 10^4
  */
 class KthLargestElementInAnArray : BaseSpec({
 

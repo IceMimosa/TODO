@@ -23,7 +23,7 @@ import io.kotest.matchers.shouldBe
  * 输出：true
  *
  * 提示：
- * 1 <= nums.length <= 105
+ * 1 <= nums.length <= 10^5
  * -10^9 <= nums[i] <= 10^9
  */
 class ContainsDuplicate : StringSpec({
