@@ -1,6 +1,5 @@
 package io.patamon.todo.leetcode
 
-import io.kotest.matchers.should
 import io.kotest.matchers.shouldBe
 import io.patamon.todo.common.BaseSpec
 

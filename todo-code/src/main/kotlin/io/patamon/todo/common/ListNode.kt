@@ -41,7 +41,7 @@ class ListNode(var `val`: Int = 0) {
     /**
      * 获取节点中所有的val值
      */
-    fun getAllValues(): MutableList<Int>? {
+    fun getAllValues(): MutableList<Int> {
         val args = mutableListOf<Int>()
         var curr: ListNode? = this
         while (curr != null) {
