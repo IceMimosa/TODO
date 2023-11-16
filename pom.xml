@@ -16,8 +16,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <kotlin.version>1.6.21</kotlin.version>
-        <kotest.version>5.1.0</kotest.version>
+        <kotlin.version>1.9.20</kotlin.version>
+        <kotest.version>5.8.0</kotest.version>
     </properties>
 
     <dependencies>
@@ -40,12 +40,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.jetbrains.kotlin</groupId>
-                <artifactId>kotlin-test-junit</artifactId>
-                <version>${kotlin.version}</version>
-                <scope>test</scope>
-            </dependency>
             <dependency>
                 <groupId>io.kotest</groupId>
                 <artifactId>kotest-runner-junit5-jvm</artifactId>
@@ -152,16 +146,12 @@
     </build>
 
     <!-- kotlin  repository-->
+	<!--
     <repositories>
         <repository>
             <id>kotlin.repo</id>
             <name>Kotlin Repository</name>
             <url>https://dl.bintray.com/kotlin/kotlin-dev/</url>
-        </repository>
-        <repository>
-            <id>patamon.release.repository</id>
-            <name>github release repository</name>
-            <url>https://raw.github.com/icemimosa/maven/release/</url>
         </repository>
     </repositories>
     <pluginRepositories>
@@ -171,4 +161,5 @@
             <url>https://dl.bintray.com/kotlin/kotlin-dev/</url>
         </pluginRepository>
     </pluginRepositories>
+    -->
 </project>
